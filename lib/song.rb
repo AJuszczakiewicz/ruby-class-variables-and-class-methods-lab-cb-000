@@ -47,7 +47,7 @@ class Song
     @@artists.to_set
   end
 
-  def self.artists_count
+  def self.artist_count
     @@artists_count
   end
 end
