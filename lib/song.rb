@@ -18,7 +18,7 @@ class Song
 
   def add_artist(artist)
     @@artists.has_key?(artist) ? @@artists[artist] += 1 : @@artists[artist] = 1
-  end
+  end 
 
   def self.count
     @@count
