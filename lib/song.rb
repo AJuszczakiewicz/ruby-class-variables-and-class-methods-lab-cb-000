@@ -48,6 +48,6 @@ class Song
   end
 
   def self.artists_count
-    @@artists.size
+    @@artists_count
   end
 end
