@@ -37,5 +37,6 @@ class Song
   end
 
   def self.artist_count
+    Hash[@@artists.group_by(&:itself).map {|k,v| [k, v.size] }]
   end
 end
