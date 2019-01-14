@@ -1,9 +1,10 @@
 require 'set'
+
 class Song
   attr_accessor :name, :genre, :artist
   @@count = 0
-  @@genres = Set.new
-  @@artists = Set.new
+  @@genres = []
+  @@artists = []
 
   def initialize(name, artist, genre)
     @name = name
@@ -29,7 +30,7 @@ class Song
   end
 
   def self.genres
-    @@genres
+    @@genres.to_set
   end
 
   def self.genre_count
@@ -37,7 +38,7 @@ class Song
   end
 
   def self.artists
-    @@artists
+    @@artists.to_set
   end
 
   def self.artists_count
