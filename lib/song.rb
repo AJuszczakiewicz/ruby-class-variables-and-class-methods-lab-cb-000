@@ -1,15 +1,17 @@
 class Song
   attr_accessor :name, :genre, :artist
   @@count = 0
-  @@genres = Hash.new
-  @@artists = Hash.new
+  @@genres = Set.new
+  @@artists = Set.new
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
-    add_genre(genre)
-    add_artist(artists)
+    @@genres << genre
+    @@artists << artist
+    #add_genre(genre)
+    #add_artist(artists)
     @@count += 1
   end
 
@@ -19,18 +21,18 @@ class Song
 
   def add_artist(artist)
     @@artists.has_key?(artist) ? @@artists[artist] += 1 : @@artists[artist] = 1
-  end 
+  end
 
   def self.count
     @@count
   end
 
   def self.genres
-    @@genres.keys
+    @@genres
   end
 
   def self.genre_count
-    @@genres.keys.size
+    @@genres.size
   end
 
   def self.artists_count
