@@ -5,24 +5,26 @@ class Song
   @@count = 0
   @@genres = []
   @@artists = []
+  @@genre_count = Hash.new
+  @@artists_count = Hash.new
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
-    @@genres << genre
-    @@artists << artist
-    #add_genre(genre)
-    #add_artist(artists)
+    add_genre(genre)
+    add_artist(artists)
     @@count += 1
   end
 
   def add_genre(genre)
-    @@genres.has_key?(genre) ? @@genres[genre] += 1 : @@genres[genre] = 1
+    @@genre_count.has_key?(genre) ? @@genre_count[genre] += 1 : @@genre_count[genre] = 1
+    @@genres << genre
   end
 
   def add_artist(artist)
-    @@artists.has_key?(artist) ? @@artists[artist] += 1 : @@artists[artist] = 1
+    @@artists_count.has_key?(artist) ? @@artists_count[artist] += 1 : @@artists_count[artist] = 1
+    @@artists << artist
   end
 
   def self.count
@@ -35,6 +37,10 @@ class Song
 
   def self.genre_count
     @@genres.size
+  end
+
+  def self.genre_count
+    @@genre_count
   end
 
   def self.artists
