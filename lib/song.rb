@@ -2,11 +2,13 @@ class Song
   attr_accessor :name, :genre, :artist
   @@count = 0
   @@genres = Set.new
+  @@artists = Set.new
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
+    @@artists << artist
     @@genres << genre
     @@count += 1
   end
