@@ -14,7 +14,12 @@ class Song
     @@count += 1
   end
 
-  def add_genre
+  def add_genre(genre)
+    if @@genres.has_key?(genre)
+      @@genres[genre] = +1
+    else
+      @@genres[genre] = 1
+    end
   end
 
   def self.count
