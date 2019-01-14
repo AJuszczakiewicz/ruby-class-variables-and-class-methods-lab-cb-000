@@ -35,6 +35,10 @@ class Song
     @@genres.size
   end
 
+  def self.artists
+    @@artists
+  end
+
   def self.artists_count
     @@artists.keys.size
   end
