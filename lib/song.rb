@@ -1,3 +1,4 @@
+require 'set'
 class Song
   attr_accessor :name, :genre, :artist
   @@count = 0
