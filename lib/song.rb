@@ -8,7 +8,13 @@ class Song
     @name = name
     @artist = artist
     @genre = genre
+    if @@genres.has_key?(genre)
+
+    end
     @@count += 1
+  end
+
+  def add_genre
   end
 
   def self.count
@@ -20,10 +26,10 @@ class Song
   end
 
   def self.genre_count
-    @@genres.size
+    @@genres.keys.size
   end
 
   def self.artists_count
-    @@artists.size
+    @@artists.keys.size
   end
 end
